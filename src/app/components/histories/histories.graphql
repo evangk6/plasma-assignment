@@ -1,0 +1,30 @@
+query getHistories {
+  histories {
+    id
+    details
+    links {
+      article
+      reddit
+      wikipedia
+    }
+    flight {
+      links {
+        flickr_images
+        article_link
+        reddit_campaign
+        reddit_launch
+        reddit_media
+        video_link
+        wikipedia
+      }
+      details
+      launch_date_utc
+      launch_site {
+        site_name
+      }
+      mission_name
+    }
+    event_date_utc
+    title
+  }
+}
