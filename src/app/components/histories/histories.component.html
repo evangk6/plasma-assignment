@@ -1,1 +1,17 @@
-<p>histories works!</p>
+<ng-container *ngIf="histories$ | async as histories">
+    <main>
+        <section class="container">
+            <mat-card
+                *ngFor="let history of histories"
+                [routerLink]="['/', history!.id]"
+            >
+            <mat-card-header>
+              <mat-card-title>{{ history!.title }}</mat-card-title>
+              <mat-card-subtitle
+                >{{ history!.details }}</mat-card-subtitle
+              >
+            </mat-card-header>
+          </mat-card>
+        </section>
+      </main>
+</ng-container>

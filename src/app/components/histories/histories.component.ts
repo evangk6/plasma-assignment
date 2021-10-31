@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { GetHistoriesGQL } from '../../services/spacexGraphql.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-histories',
@@ -8,7 +10,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class HistoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private getHistoriesService: GetHistoriesGQL) { }
+
+  histories$ = this.getHistoriesService.fetch()
+  .pipe(map((res) => res.data.histories));
 
   ngOnInit(): void {
   }
