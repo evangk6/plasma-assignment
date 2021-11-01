@@ -31,5 +31,6 @@ query historyInfo($id: ID!) {
     }
     details
     event_date_utc
+    title
   }
 }

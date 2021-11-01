@@ -1,1 +1,15 @@
-<p>history works!</p>
+<ng-container *ngIf="historyInfo$ | async as historyInfo">
+    <section style="padding-top: 20px;">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>{{ historyInfo.title }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+            <p>{{ historyInfo.details }}</p>
+            <li><a href={{historyInfo.links!.article}}>News Article</a></li>
+            <li><a href={{historyInfo.links!.reddit}}>Reddit Post</a></li>
+            <li><a href={{historyInfo.links!.wikipedia}}>Wikipedia Page</a></li>
+            </mat-card-content>
+        </mat-card>
+    </section>
+</ng-container>

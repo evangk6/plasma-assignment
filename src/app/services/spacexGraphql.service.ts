@@ -1329,7 +1329,7 @@ export type HistoryInfoQueryVariables = Exact<{
 }>;
 
 
-export type HistoryInfoQuery = { __typename?: 'Query', history?: { __typename?: 'History', id?: string | null | undefined, details?: string | null | undefined, event_date_utc?: any | null | undefined, links?: { __typename?: 'Link', article?: string | null | undefined, reddit?: string | null | undefined, wikipedia?: string | null | undefined } | null | undefined, flight?: { __typename?: 'Launch', details?: string | null | undefined, id?: string | null | undefined, launch_date_local?: any | null | undefined, launch_year?: string | null | undefined, mission_name?: string | null | undefined, links?: { __typename?: 'LaunchLinks', flickr_images?: Array<string | null | undefined> | null | undefined, article_link?: string | null | undefined, mission_patch?: string | null | undefined, mission_patch_small?: string | null | undefined, presskit?: string | null | undefined, reddit_campaign?: string | null | undefined, reddit_launch?: string | null | undefined, reddit_media?: string | null | undefined, reddit_recovery?: string | null | undefined, video_link?: string | null | undefined, wikipedia?: string | null | undefined } | null | undefined, launch_site?: { __typename?: 'LaunchSite', site_name?: string | null | undefined } | null | undefined } | null | undefined } | null | undefined };
+export type HistoryInfoQuery = { __typename?: 'Query', history?: { __typename?: 'History', id?: string | null | undefined, details?: string | null | undefined, event_date_utc?: any | null | undefined, title?: string | null | undefined, links?: { __typename?: 'Link', article?: string | null | undefined, reddit?: string | null | undefined, wikipedia?: string | null | undefined } | null | undefined, flight?: { __typename?: 'Launch', details?: string | null | undefined, id?: string | null | undefined, launch_date_local?: any | null | undefined, launch_year?: string | null | undefined, mission_name?: string | null | undefined, links?: { __typename?: 'LaunchLinks', flickr_images?: Array<string | null | undefined> | null | undefined, article_link?: string | null | undefined, mission_patch?: string | null | undefined, mission_patch_small?: string | null | undefined, presskit?: string | null | undefined, reddit_campaign?: string | null | undefined, reddit_launch?: string | null | undefined, reddit_media?: string | null | undefined, reddit_recovery?: string | null | undefined, video_link?: string | null | undefined, wikipedia?: string | null | undefined } | null | undefined, launch_site?: { __typename?: 'LaunchSite', site_name?: string | null | undefined } | null | undefined } | null | undefined } | null | undefined };
 
 export const GetHistoriesDocument = gql`
     query getHistories {
@@ -1408,6 +1408,7 @@ export const HistoryInfoDocument = gql`
     }
     details
     event_date_utc
+    title
   }
 }
     `;
