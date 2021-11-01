@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { AgoPipe } from './ago/ago.pipe';
 import { CommentformComponent } from './components/commentform/commentform.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { CommentformComponent } from './components/commentform/commentform.compo
     HistoryComponent,
     NavbarComponent,
     AgoPipe,
-    CommentformComponent
+    CommentformComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { CommentformComponent } from './components/commentform/commentform.compo
     GraphQLModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

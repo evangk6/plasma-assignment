@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-commentform',
@@ -8,9 +9,24 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class CommentformComponent implements OnInit {
 
-  constructor() { }
+  commentForm: FormGroup;
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.initializeForm();
+  }
+
+  initializeForm(): void {
+    this.commentForm = this.fb.group({
+      name: '',
+      email: '',
+      comment: ''
+    });
+  }
+
+  onSend(): void {
+    console.log(this.commentForm);
   }
 
 }
