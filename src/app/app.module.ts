@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { AgoPipe } from './ago/ago.pipe';
+import { CommentformComponent } from './components/commentform/commentform.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AgoPipe } from './ago/ago.pipe';
     HistoriesComponent,
     HistoryComponent,
     NavbarComponent,
-    AgoPipe
+    AgoPipe,
+    CommentformComponent
   ],
   imports: [
     BrowserModule,
