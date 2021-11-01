@@ -10,6 +10,7 @@ import { HistoryComponent } from './components/history/history.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { AgoPipe } from './ago/ago.pipe';
@@ -35,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
+    MatInputModule,
     ReactiveFormsModule,
   ],
   providers: [],

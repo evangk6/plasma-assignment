@@ -9,6 +9,7 @@
     we would so love to hear from you.
     Please leave your comment along with your name and email.
 </p>
+<p></p>
 <form [formGroup]="commentForm" (ngSubmit)="onSend()">
     <div>
         <label for="name">
@@ -16,6 +17,9 @@
             <input id="name" type="text" formControlName="name"
             placeholder="required"
             class="form-control">
+            <mat-error *ngIf="name!.invalid && name!.touched">
+                Name is required.
+            </mat-error>
         </label>
     </div>
     <div>
@@ -23,9 +27,13 @@
             Email:
             <input id="email" type="text" formControlName="email"
             placeholder="required" class="form-control">
+            <mat-error *ngIf="email!.invalid && email!.touched">
+                Invalid email address!
+            </mat-error>
         </label>
     </div>
     <div>
+        <p></p>
         <label for="comment">
             <p>Please let us know your question or comment!</p>            
             <textarea id="comment" cols="30" rows="10" formControlName="comment"

@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-commentform',
@@ -19,10 +19,27 @@ export class CommentformComponent implements OnInit {
 
   initializeForm(): void {
     this.commentForm = this.fb.group({
-      name: '',
-      email: '',
+      name: ['', [
+        Validators.required
+      ]],
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
       comment: ''
     });
+  }
+
+  get name() {
+    return this.commentForm.get("name");
+  }
+
+  get email() {
+    return this.commentForm.get("email");
+  }
+
+  get comment() {
+    return this.commentForm.get("comment");
   }
 
   onSend(): void {
