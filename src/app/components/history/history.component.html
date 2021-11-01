@@ -3,6 +3,9 @@
         <mat-card>
             <mat-card-header>
                 <mat-card-title>{{ historyInfo.title }}</mat-card-title>
+                <mat-card-subtitle>
+                    {{ historyInfo!.event_date_utc | ago }}
+                </mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
             <p>{{ historyInfo.details }}</p>

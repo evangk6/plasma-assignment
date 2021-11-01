@@ -1,0 +1,45 @@
+<h1>Contact Us!</h1>
+<p>
+    Have a question? We would be so happy to help.
+    Please leave your question along with your name and email,
+    and somone will contact you back soon.
+</p>
+<p>
+    Let us know what you think! If you have some helpful feedback,
+    we would so love to hear from you.
+    Please leave your comment along with your name and email.
+</p>
+<p></p>
+<form [formGroup]="commentForm" (ngSubmit)="onSend()">
+    <div>
+        <label for="name">
+            Name:
+            <input id="name" type="text" formControlName="name"
+            placeholder="required"
+            class="form-control">
+            <mat-error *ngIf="name!.invalid && name!.touched">
+                Name is required.
+            </mat-error>
+        </label>
+    </div>
+    <div>
+        <label for="email">
+            Email:
+            <input id="email" type="text" formControlName="email"
+            placeholder="required" class="form-control">
+            <mat-error *ngIf="email!.invalid && email!.touched">
+                Invalid email address!
+            </mat-error>
+        </label>
+    </div>
+    <div>
+        <p></p>
+        <label for="comment">
+            <p>Please let us know your question or comment!</p>            
+            <textarea id="comment" cols="30" rows="10" formControlName="comment"
+            placeholder="please type in your comment/question here"
+            class="form-control"></textarea>
+        </label>
+    </div>
+    <button class="btn btn-primary">Send</button>
+</form>

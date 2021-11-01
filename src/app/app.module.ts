@@ -10,9 +10,13 @@ import { HistoryComponent } from './components/history/history.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
+import { MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
 import { AgoPipe } from './ago/ago.pipe';
+import { CommentformComponent } from './components/commentform/commentform.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,8 @@ import { AgoPipe } from './ago/ago.pipe';
     HistoriesComponent,
     HistoryComponent,
     NavbarComponent,
-    AgoPipe
+    AgoPipe,
+    CommentformComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,9 @@ import { AgoPipe } from './ago/ago.pipe';
     GraphQLModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
