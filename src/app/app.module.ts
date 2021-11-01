@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
+import { AgoPipe } from './ago/ago.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './components/layout/navbar/navbar.component';
     ToolbarComponent,
     HistoriesComponent,
     HistoryComponent,
-    NavbarComponent
+    NavbarComponent,
+    AgoPipe
   ],
   imports: [
     BrowserModule,

@@ -6,11 +6,17 @@
                 [routerLink]="['/', history!.id]"
             >
             <mat-card-header>
-                <mat-card-title>{{ history!.title }}</mat-card-title>
-                    <mat-card-subtitle>
-                        {{ history!.details }}
-                    </mat-card-subtitle>
+                <mat-card-title>
+                    {{ history!.title }}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{ history!.event_date_utc | ago }}
+                </mat-card-subtitle>
                 </mat-card-header>
+                
+                <mat-card-content>
+                    {{ history!.details }}
+                </mat-card-content>
             </mat-card>
         </section>
       </main>
