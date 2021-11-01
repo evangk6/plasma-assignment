@@ -1,18 +1,48 @@
 <ng-container *ngIf="historyInfo$ | async as historyInfo">
-    <section style="padding-top: 20px;">
-        <mat-card>
-            <mat-card-header>
-                <mat-card-title>{{ historyInfo.title }}</mat-card-title>
-                <mat-card-subtitle>
-                    {{ historyInfo!.event_date_utc | ago }}
-                </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-            <p>{{ historyInfo.details }}</p>
-            <li><a href={{historyInfo.links!.article}}>News Article</a></li>
-            <li><a href={{historyInfo.links!.reddit}}>Reddit Post</a></li>
-            <li><a href={{historyInfo.links!.wikipedia}}>Wikipedia Page</a></li>
-            </mat-card-content>
-        </mat-card>
-    </section>
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{ historyInfo!.title! }}</mat-card-title>
+            <mat-card-subtitle>
+                {{ historyInfo!.event_date_utc | ago }}
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ historyInfo!.details }}</p>
+            <br>
+            <p *ngIf="historyInfo!.flight && historyInfo!.flight!.details!">{{ historyInfo!.flight!.details! }}</p> 
+            <br>           
+            <p>Date: {{ historyInfo!.event_date_utc }}</p>
+            <li *ngIf="historyInfo!.links!.article">
+                <a href={{historyInfo.links!.article}}>News Article</a></li>
+            <li *ngIf="historyInfo!.flight && historyInfo.flight!.links!.presskit">
+                <a href={{historyInfo.flight!.links!.presskit}}>SpaceX Press Kit Download</a></li>
+            <li *ngIf="historyInfo!.flight && historyInfo.links!.wikipedia">
+                <a href={{historyInfo.links!.wikipedia}}>Main Wikipedia Page</a></li>
+            <li *ngIf="historyInfo!.flight && historyInfo.flight!.links!.wikipedia">
+                <a href={{historyInfo.flight!.links!.wikipedia}}>Flight Wikipedia Page</a></li>
+            <li *ngIf="historyInfo!.flight && historyInfo.flight!.links!.video_link">
+                <a href={{historyInfo.flight!.links!.video_link}}>Video Link</a></li>
+            <li *ngIf="historyInfo!.flight && historyInfo.links!.reddit">
+                <a href={{historyInfo.links!.reddit}}>Main Reddit Post</a></li>
+            <li *ngIf="historyInfo!.flight && historyInfo.flight!.links!.reddit_campaign">
+                <a href={{historyInfo.flight!.links!.reddit_campaign}}>Reddit Campaign Post</a></li>
+            <li *ngIf="historyInfo!.flight && historyInfo.flight!.links!.reddit_launch">
+                <a href={{historyInfo.flight!.links!.reddit_launch}}>Reddit Launch Post</a></li>
+            <li *ngIf="historyInfo!.flight && historyInfo.flight!.links!.reddit_media">
+                <a href={{historyInfo.flight!.links!.reddit_media}}>Reddit Media Post</a></li>
+            <li *ngIf="historyInfo!.flight && historyInfo.flight!.links!.reddit_recovery">
+                <a href={{historyInfo.flight!.links!.reddit_recovery}}>Reddit Recovery Post</a></li>
+
+            <div *ngIf="historyInfo!.flight && historyInfo.flight!.links!.flickr_images">
+                <img
+                *ngFor="let pic of historyInfo.flight!.links!.flickr_images"
+                [src]="pic"
+                alt="Picture of {{ historyInfo.title }}"
+                height="550"
+                width="550"
+                loading="lazy"
+                />
+            </div>
+        </mat-card-content>
+    </mat-card>
 </ng-container>
