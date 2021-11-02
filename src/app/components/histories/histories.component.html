@@ -13,6 +13,14 @@
                     {{ history!.event_date_utc | ago }}
                 </mat-card-subtitle>
                 </mat-card-header>
+                <img
+                *ngIf="history!.flight && history!.flight!.links && history!.flight!.links!.flickr_images![0]" 
+                height="500"
+                width="500"
+                loading="lazy"
+                [src]="history!.flight!.links!.flickr_images![0]"
+                alt="Photo of {{ history!.title }}"
+                />
                 
                 <mat-card-content>
                     {{ history!.details }}
