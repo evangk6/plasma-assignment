@@ -1,0 +1,36 @@
+query historyInfo($id: ID!) {
+  history(id: $id) {
+    id
+    links {
+      article
+      reddit
+      wikipedia
+    }
+    flight {
+      links {
+        flickr_images
+        article_link
+        mission_patch
+        mission_patch_small
+        presskit
+        reddit_campaign
+        reddit_launch
+        reddit_media
+        reddit_recovery
+        video_link
+        wikipedia
+      }
+      details
+      id
+      launch_date_local
+      launch_site {
+        site_name
+      }
+      launch_year
+      mission_name
+    }
+    details
+    event_date_utc
+    title
+  }
+}
